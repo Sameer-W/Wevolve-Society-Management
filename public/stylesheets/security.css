@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: montserrat, sans-serif;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  color: white;
+  text-transform: uppercase;
+  align-items: center;
+  font-weight: bold;
+  font-size: 19px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.dropdown img {
+  cursor: pointer;
+}
+
+.navbar :hover {
+  color: #252525;
+}
+
+#active {
+  text-decoration-line: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 3px;
+}
+
+.container-fluid img {
+  padding-right: 1cm;
+}
+
+.logo {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo .img {
+  position: relative;
+}
+
+.logo .img img {
+  position: absolute;
+  right: -0.4cm;
+  top: -65px;
+}
+
+.logo h2 {
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 6px;
+  margin-left: 50px;
+}
+
+@media (max-width: 575px) {
+  .logo .img {
+    display: none;
+  }
+}
+
+.container-form {
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 590;
+  color: #008a94;
+  text-align: center;
+  margin: 0.75cm;
+}
+
+.form-align {
+  color: #008a94;
+  font-weight: bold;
+}
+
+.form-align .btn {
+  margin: 1cm auto;
+}
+
+.form-align input {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+}
+
+.form-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  background-color: #00a0aa;
+  color: white;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.filter h3 {
+  font-family: "Poppins", sans-serif;
+  color: #00a0aa;
+  text-align: center;
+  font-weight: 590;
+  margin: 1cm auto;
+}
+
+.filter {
+  text-align: center;
+  margin-bottom: 0.5cm;
+}
+
+.filter label {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #008a94;
+}
+
+.filter-select {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+  margin-right: 10px;
+}
+
+.dropdown {
+  padding: 0;
+  word-spacing: 0.5cm;
+}
+
+.content {
+  margin: 2cm 2cm;
+}
+
+.table {
+  border-collapse: collapse;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 5px 10px #e2e2e2;
+  text-align: center;
+}
+
+thead {
+  background-color: #dffffc;
+  margin: 30px;
+  color: #252525;
+}
+
+th {
+  font-family: "montserrat", sans-serif;
+  padding: 1.1rem 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.32rem;
+  font-weight: 600;
+  color: #252525;
+  letter-spacing: 2px;
+}
+
+td {
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 0.5rem;
+  border-top: rgb(226, 226, 226) solid 1px;
+  font-weight: 450;
+  color: #252525;
+}
+
+#pagefooter {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#footerbody {
+  color: white;
+  background-color: #00a0aa;
+  text-align: center;
+  font-weight: 500;
+}
+
+#footertitle {
+  padding-top: 0.5rem;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+#footertext {
+  font-size: 20px;
+  padding-top: 0.5em;
+  font-weight: 600;
+}
+
+#footerbody a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #abfaff;
+}
+
+#footerbody a:hover {
+  color: #252525;
+  font-size: 0.9em;
+  transition: 0.5s;
+}
+
+#footerend {
+  background-color: #252525;
+  color: #00a0aa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

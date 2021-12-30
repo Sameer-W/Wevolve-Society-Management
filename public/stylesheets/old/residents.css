@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: montserrat, sans-serif;
+}
+
+.alert-div {
+  margin-top: 30px;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.alert-p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.card-div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .card-div-div {
+  padding-left: 40px;
+  padding-right: 40px;
+} */
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  color: white;
+  text-transform: uppercase;
+  align-items: center;
+  font-weight: bold;
+  font-size: 19px;
+  display: inline-block;
+}
+
+.navbar :hover {
+  color: #252525;
+}
+
+#active {
+  text-decoration-line: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 3px;
+}
+.logo {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo .img {
+  position: relative;
+}
+
+.logo .img img {
+  position: absolute;
+  right: -0.4cm;
+  top: -65px;
+}
+
+.logo h2 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.content {
+  padding-top: 1cm;
+  padding-left: 2cm;
+  padding-right: 2cm;
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 75%);
+  border-radius: 25px;
+  border-color: #98e3e8;
+  border-style: solid;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  background-color: #00a0aa;
+  color: white;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.back-button {
+  margin: 2cm auto;
+}
+
+.container-form {
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 590;
+  color: #008a94;
+  text-align: center;
+  margin: 0.75cm;
+}
+
+.form-align {
+  color: #008a94;
+  font-weight: bold;
+}
+
+.form-align .btn {
+  margin: 1cm;
+}
+
+.form-align input {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+}
+
+.form-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-select {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+}
+
+.filter h3 {
+  color: #00a0aa;
+  text-align: center;
+  font-weight: bold;
+  margin: 1cm auto;
+}
+
+.filter {
+  text-align: center;
+  margin-bottom: 0.5cm;
+}
+
+.dropdown {
+  padding: 0;
+  word-spacing: 0.5cm;
+}
+
+.card {
+  border-radius: 5%;
+  background-color: #00a0aa;
+  box-shadow: 0px 1px 5px 1px #000;
+}
+
+.card-img-top {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+.card-body {
+  color: white;
+}
+
+.card-body .btn {
+  background-color: white;
+  color: #00a0aa;
+}
+
+.card-body .btn :hover {
+  background-color: #252525;
+  transition: 3s;
+}
+
+#pagefooter {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: none;
+  border-color: rgba(white, 0.125);
+  background-color: none;
+  border-radius: 0;
+}
+
+#footerbody {
+  color: white;
+  background-color: #00a0aa;
+  text-align: center;
+  font-weight: 500;
+}
+
+#footertitle {
+  padding-top: 0.5rem;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+#footertext {
+  font-size: 20px;
+  padding-top: 0.5em;
+  font-weight: 600;
+}
+
+#footerbody a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #abfaff;
+}
+
+#footerbody a:hover {
+  color: #252525;
+  font-size: 0.9em;
+  transition: 0.5s;
+}
+
+#footerend {
+  background-color: #252525;
+  color: #00a0aa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerimageslogo :hover {
+  cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .logo .img {
+    display: none;
+  }
+}

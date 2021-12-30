@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(Admin)Complaints</title>
+  <link rel="icon" href="/images/residents(admin)/round_apartment_black_24dp.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/dues.css">
+  <!-- <link rel="stylesheet" href="./dues.css"> -->
+</head>
+
+<body>
+
+  <div class="logo" style="color: #00A0AA; background-color: white;">
+    <h2>Wevolve</h2>
+    <div class="img">
+      <img src="/images/residents(admin)/building.png" height="150px" width="200px">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00A0AA;">
+    <div class="container-fluid">
+      <!-- <a class="nav-link" href="#">HOME</a>
+            <a class="nav-link" href="/images/residents(admin)/Dues Page.html">DUES</a>
+            <a class="nav-link" href="#">NOTICES</a>
+            <a class="nav-link" href="#">COMPLAINTS</a>
+            <a class="nav-link" href="/images/residents(admin)/Permission.html">PERMISSION</a>
+            <a class="nav-link" href="/images/residents(admin)/Residents.html">RESIDENTS</a>
+            <a class="nav-link" id="active" href="/images/residents(admin)/Documents Page.html">DOCUMENTS</a> -->
+      <a class="nav-link" href="/admin/homepage">HOME</a>
+      <a class="nav-link" href="/admin/dues">DUES</a>
+      <a class="nav-link" href="/admin/notices">NOTICES</a>
+      <a class="nav-link" id="active" href="/admin/complaints">COMPLAINTS</a>
+      <a class="nav-link" href="/admin/permissions">PERMISSION</a>
+      <a class="nav-link" href="/admin/addUser">RESIDENTS</a>
+      <a class="nav-link" href="/admin/documents">DOCUMENTS</a>
+      <div class="dropdown">
+        <img src="/images/residents(admin)/baseline_person_white_24dp.png" height="30px" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="table-responsive">
+      <table class="table table-hover table-borderless">
+        <thead>
+
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Flat</th>
+            <th scope="col">Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Details</th>
+            <th scope="col">Change Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (complaints.length) { %>
+            <% const revComplaints=complaints.reverse() %>
+              <% for (const complaint of revComplaints) { %>
+                <tr>
+                  <td>
+                    <%- complaint.date.toLocaleString().split(",")[0] %>
+                  </td>
+                  <td>
+                    <%- `${complaint.complainant.flat.wing}/${complaint.complainant.flat.roomNumber}` %>
+                  </td>
+                  <td>
+                    <%- complaint.complainant.name %>
+                  </td>
+                  <td>
+                    <%- complaint.subject %>
+                  </td>
+                  <td>
+                    <%- complaint.details %>
+                  </td>
+                  <!-- <td><%- complaint.status %> </td> -->
+                  <td>
+                    <% if (complaint.status=="Resolved" ) { %>
+                      <span class="Per5">Resolved</span>
+                      <% } else { %>
+                        <div class="d-grid gap-2 d-md-block">
+                          <form class="status-form" method="POST"
+                            action="<%- `/admin/complaints/${complaint._id}/resolved` %>">
+                            <button class="btn btn-outline-success submit">Resolve</button>
+                          </form>
+
+                        </div>
+                        <% } %>
+                  </td>
+
+                </tr>
+                <% } %>
+                  <% } %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn">BACK</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="card" id="pagefooter">
+      <div class="card-body" id="footerbody">
+        <h1 class="card-title" id="footertitle">Get In Touch</h1>
+        <p class="card-text" id="footertext">To learn more and for further enquiries</p>
+        <h4><a href="#">Click Here</a></h4>
+        <div class="footerimg">
+          <img src="/images/residents(admin)/Up arrow.png" alt="arrow" height="40px">
+        </div>
+      </div>
+      <div class="card-footer" id="footerend">
+        <h5>Contact: +917303209630 </h5>
+        <div class="footerimageslogo">
+          <a href="#"><img src="/images/residents(admin)/youtube-logo-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)/logo-instagram-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)/logo-twitter-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)/facebook logo.png" height="35px"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

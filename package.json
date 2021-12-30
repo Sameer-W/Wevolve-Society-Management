@@ -1,0 +1,25 @@
+{
+  "name": "society-app",
+  "version": "1.0.0",
+  "description": "Society Management Website for easy and convenient maintenance of day-to-day activities of an operating society.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pranjli",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.8",
+    "multer": "^1.4.3",
+    "multer-storage-cloudinary": "^4.0.0",
+    "node-mandrill": "^1.0.1",
+    "nodemailer": "^6.6.5"
+  }
+}

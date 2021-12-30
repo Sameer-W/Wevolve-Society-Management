@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permission</title>
+  <link rel="icon" href="/images/residents(admin)/round_apartment_black_24dp.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/dues.css">
+  <!-- <link rel="stylesheet" href="./dues.css"> -->
+</head>
+
+<body>
+
+  <div class="logo" style="color: #00A0AA; background-color: white;">
+    <h2>Wevolve</h2>
+    <div class="img">
+      <img src="/images/residents(admin)/building.png" height="150px" width="200px">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00A0AA;">
+    <div class="container-fluid">
+      <a class="nav-link" href=<%- `/resident/${id}/homepage` %>>HOME</a>
+      <a class="nav-link" href=<%- `/resident/${id}/dues` %>>DUES</a>
+      <a class="nav-link" href=<%- `/resident/${id}/notices` %>>NOTICES</a>
+      <a class="nav-link" href=<%- `/resident/${id}/complaints` %>>COMPLAINTS</a>
+      <a class="nav-link" href=<%- `/resident/${id}/permissions` %>>PERMISSIONS</a>
+      <a class="nav-link" href=<%- `/resident/${id}/residents` %>>RESIDENTS</a>
+      <a class="nav-link" href=<%- `/resident/${id}/documents` %>>DOCUMENTS</a>
+      <div class="dropdown">
+        <img src="/images/resident-home/baseline_person_white_24dp.png" height="30px" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-form">
+    <h2>ASK FOR PERMISSION</h2>
+    <div class="form-align">
+      <form method="POST">
+        <div class="mb-3">
+          <label for="Date" class="form-label">Date</label>
+          <input type="date" required name="occasionDate" class="form-control" id="Date">
+        </div>
+        <div class="mb-3">
+          <label for="Time" class="form-label">Time</label>
+          <input type="text" required name="time" class="form-control" id="Time">
+        </div>
+        <div class="mb-3">
+          <label for="Occassion" class="form-label">Event</label>
+          <input type="text" required required name="event" class="form-control" id="Occassion">
+        </div>
+        <div class="mb-3">
+          <label for="Details" class="form-label">Details</label>
+          <input type="Details" required name="details" class="form-control" id="Details">
+        </div>
+        <div class="mb-3">
+          <label for="About" class="form-label">Venue</label>
+          <input type="text-area" required name="venue" class="form-control" id="About">
+        </div>
+        <div class="mb-3">
+          <label for="Contact" class="form-label">Organizer's Contact</label>
+          <input type="tel" required name="phone" class="form-control" id="Contact">
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3>PREVIOUS PERMISSIONS</h3>
+    <div class="table-responsive">
+      <table class="table table-hover table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (permissions.length) { %>
+            <% const revPermissions=permissions.reverse() %>
+              <% for (const permission of revPermissions) { %>
+                <tr>
+                  <td>
+                    <%- permission.occasionDate.toLocaleString().split(",")[0] %>
+                  </td>
+                  <td>
+                    <%- permission.time %>
+                  </td>
+                  <td>
+                    <%- permission.event %>
+                  </td>
+                  <td>
+                    <% if (permission.status=="Accepted" ) { %>
+                      <span class="Per5">Accepted</span>
+                      <% } else if (permission.status=="Rejected" ) { %>
+                        <span class="Per7">Rejected</span>
+                        <% } else if (permission.status=="Pending" ) {%>
+                          <span class="Per6">Pending</span>
+                          <% } %>
+                  </td>
+                </tr>
+                <% } %>
+                  <% } %>
+                    <!-- <tr>
+              <td>21 Sept 2021</td>
+              <td>Birthday</td>
+              <td>Granted</td>
+            </tr>
+            <tr>
+              <td>21 Sept 2021</td>
+              <td>Anniversary</td>
+              <td>Granted</td>
+            </tr>
+            <tr>
+              <td>21 Sept 2021</td>
+              <td>Navratri</td>
+              <td>Granted</td>
+            </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn">BACK</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="card" id="pagefooter">
+      <div class="card-body" id="footerbody">
+        <h1 class="card-title" id="footertitle">Get In Touch</h1>
+        <p class="card-text" id="footertext">To learn more and for further enquiries</p>
+        <h4><a href="#">Click Here</a></h4>
+        <div class="footerimg">
+          <img src="/images/residents(admin)/Up arrow.png" alt="arrow" height="40px">
+        </div>
+      </div>
+      <div class="card-footer" id="footerend">
+        <h5>Contact: +917303209630 </h5>
+        <div class="footerimageslogo">
+          <a href="#"><img src="/images/residents(admin)/youtube-logo-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)/logo-instagram-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)/logo-twitter-.png" height="35px"></a>
+          <a href="#"><img src="/images/residents(admin)//facebook logo.png" height="35px"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

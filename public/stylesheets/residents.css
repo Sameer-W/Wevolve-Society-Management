@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: montserrat, sans-serif;
+}
+.alert-div {
+  margin-top: 30px;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.alert-p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  color: white;
+  text-transform: uppercase;
+  align-items: center;
+  font-weight: bold;
+  font-size: 19px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.dropdown img {
+  cursor: pointer;
+}
+
+.navbar :hover {
+  color: #252525;
+}
+
+#active {
+  text-decoration-line: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 3px;
+}
+
+.container-fluid img {
+  padding-right: 1cm;
+}
+
+.logo {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo .img {
+  position: relative;
+}
+
+.logo .img img {
+  position: absolute;
+  right: -0.4cm;
+  top: -65px;
+}
+
+.logo h2 {
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 6px;
+  margin-left: 50px;
+}
+
+@media (max-width: 575px) {
+  .logo .img {
+    display: none;
+  }
+}
+
+.content {
+  padding-top: 1cm;
+  padding-left: 2cm;
+  padding-right: 2cm;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.back-button .btn {
+  margin: 2cm auto;
+  font-family: "Poppins", sans-serif;
+  background-color: #00a0aa;
+  color: white;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.form-align .btn {
+  margin: 1cm;
+  font-family: "Poppins", sans-serif;
+  background-color: #00a0aa;
+  color: white;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.container-form {
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 590;
+  color: #008a94;
+  text-align: center;
+  margin: 0.75cm;
+}
+
+.form-align {
+  color: #008a94;
+  font-weight: bold;
+}
+
+.form-align input {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+}
+
+.form-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-select {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+}
+
+.filter h3 {
+  color: #00a0aa;
+  text-align: center;
+  margin: 1cm auto;
+}
+
+.filter label {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin-right: 10px;
+  color: #008a94;
+}
+
+.filter-select {
+  border-radius: 5px;
+  background-color: #eefdff;
+  border-width: 1px;
+  border-radius: 20px;
+  color: #005258;
+  border-style: solid;
+  border-color: #00a0aa;
+  outline-color: #00a0aa;
+  margin-right: 2rem;
+  padding: 0.7rem;
+}
+
+.filter {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.filter-res {
+  margin-top: 50px;
+}
+
+.dropdown {
+  padding: 0;
+  word-spacing: 0.5cm;
+}
+
+.card {
+  border-radius: 5%;
+  background-color: #00a0aa;
+  box-shadow: 0px 1px 5px 1px #000;
+}
+
+/* .card-div {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.card-img-top {
+  margin-top: 0.2cm;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+.card-body {
+  color: white;
+}
+
+.card-body .btn {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  color: #00a0aa;
+  position: relative;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+#pagefooter {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: none;
+  border-color: rgba(white, 0.125);
+  background-color: none;
+  border-radius: 0;
+}
+
+#footerbody {
+  color: white;
+  background-color: #00a0aa;
+  text-align: center;
+  font-weight: 500;
+}
+
+#footertitle {
+  padding-top: 0.5rem;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+#footertext {
+  font-size: 20px;
+  padding-top: 0.5em;
+  font-weight: 600;
+}
+
+#footerbody a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #abfaff;
+}
+
+#footerbody a:hover {
+  color: #252525;
+  font-size: 0.9em;
+  transition: 0.5s;
+}
+
+#footerend {
+  background-color: #252525;
+  color: #00a0aa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

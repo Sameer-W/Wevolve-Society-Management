@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Home Page</title>
+  <link rel="icon" href="/images/admin-home/round_apartment_black_24dp.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/Admin_HomePage.css">
+  <!-- <link rel="stylesheet" href="./Admin_HomePage.css"> -->
+</head>
+
+<body style="background: white;">
+
+  <div class="logo" style="color: #00A0AA; background-color: white;">
+    <h2>Wevolve</h2>
+    <div class="img">
+      <img src="/images/admin-home/building.png" height="150px" width="200px">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00A0AA;">
+    <div class="container-fluid">
+      <a class="nav-link" id="active" href="/admin/homepage">HOME</a>
+      <a class="nav-link" href="/admin/dues">DUES</a>
+      <a class="nav-link" href="/admin/notices">NOTICES</a>
+      <a class="nav-link" href="/admin/complaints">COMPLAINTS</a>
+      <a class="nav-link" href="/admin/permissions">PERMISSION</a>
+      <a class="nav-link" href="/admin/addUser">RESIDENTS</a>
+      <a class="nav-link" href="/admin/documents">DOCUMENTS</a>
+      <div class="dropdown">
+        <img src="/images/admin-home/baseline_person_white_24dp.png" height="30px" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <h3>Last Requested Permissions</h3>
+  <div class="container-center">
+    <div class="row">
+      <% for (const permission of permissions) { %>
+        <div class="col-md-6">
+          <div class="box">
+            <h4>Permission for <%- permission.event %>.</h4>
+            <div class="row">
+              <div class="col-2">
+                <img src="/images/admin-home/baseline_person_blue_24dp.png" height="70px">
+              </div>
+              <div class="col-4">
+
+                <p>Name:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- permission.seeker.name %>
+                  </span></p>
+                <p>Contact:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- permission.seeker.phone %>
+                  </span></p>
+                <p>Date:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- permission.occasionDate.toLocaleString().split(",")[0] %>
+                  </span></p>
+              </div>
+              <div class="col-4">
+                <p>Event:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- permission.event %>
+                  </span></p>
+                <p>Venue:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- permission.venue %>
+                  </span></p>
+                <p>Flat:&nbsp&nbsp&nbsp<span id="fill">
+                    <%- `${permission.seeker.flat.wing}/${permission.seeker.flat.roomNumber}` %>
+                  </span></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <% } %>
+
+
+    </div>
+  </div>
+  <h3>Last Complaints</h3>
+  <div class="container-center">
+    <div class="box">
+      <div class="table-responsive">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">DATE</th>
+              <th scope="col">RESIDENT</th>
+              <th scope="col">SUBJECT</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const complaint of complaints) { %>
+              <tr>
+                <td scope="row">
+                  <%- complaint.date.toLocaleString().split(",")[0] %>
+                </td>
+                <td>
+                  <%- `${complaint.complainant.name},
+                    ${complaint.complainant.flat.wing}/${complaint.complainant.flat.roomNumber}` %>
+                </td>
+                <td>
+                  <%- complaint.subject %>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3>Last Dues</h3>
+  <div class="container-center">
+    <div class="box">
+      <div class="table-responsive">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">ISSUE DATE</th>
+              <th scope="col">BILL NAME</th>
+              <th scope="col">AMOUNT</th>
+              <th scope="col">DUE DATE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const due of dues) { %>
+              <tr>
+                <td scope="row">
+                  <%- due.date.toLocaleString().split(",")[0] %>
+                </td>
+                <td>
+                  <%- due.name %>
+                </td>
+                <td>
+                  <%- due.amount %>
+                </td>
+                <td scope="row">
+                  <%- due.dueDate.toLocaleString().split(",")[0] %>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="card" id="pagefooter">
+      <div class="card-body" id="footerbody">
+        <h1 class="card-title" id="footertitle">Get In Touch</h1>
+        <p class="card-text" id="footertext">To learn more and for further enquiries</p>
+        <h4><a href="#">Click Here</a></h4>
+        <div class="footerimg">
+          <img src="/images/admin-home/Up arrow.png" alt="arrow" height="40px">
+        </div>
+      </div>
+      <div class="card-footer" id="footerend">
+        <h5>Contact: +917303209630 </h5>
+        <div class="footerimageslogo">
+          <a href="#"><img src="/images/admin-home/youtube-logo-.png" height="35px"></a>
+          <a href="#"><img src="/images/admin-home/logo-instagram-.png" height="35px"></a>
+          <a href="#"><img src="/images/admin-home/logo-twitter-.png" height="35px"></a>
+          <a href="#"><img src="/images/admin-home/facebook logo.png" height="35px"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

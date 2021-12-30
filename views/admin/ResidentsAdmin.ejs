@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta value="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(Admin)RESIDENT INFORMATION</title>
+  <link rel="icon" href="/images/residents(admin)/round_apartment_black_24dp.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/residents.css">
+  <!-- <link rel="stylesheet" href="./residents.css"> -->
+</head>
+
+<body>
+  <div class="logo" style="color: #00A0AA; background-color: white;">
+    <h2>Wevolve</h2>
+    <div class="img">
+      <img src="/images/residents(admin)/building.png" height="150px" width="200px">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00A0AA;">
+    <div class="container-fluid">
+      <!-- <a class="nav-link" href="#">HOME</a>
+            <a class="nav-link" href="/images/residents(admin)/Dues Page.html">DUES</a>
+            <a class="nav-link" href="#">NOTICES</a>
+            <a class="nav-link" href="#">COMPLAINTS</a>
+            <a class="nav-link" href="#">PERMISSION</a>
+            <a class="nav-link" id="active" href="#">RESIDENTS</a>
+            <a class="nav-link" href="/images/residents(admin)/Documents Page.html">DOCUMENTS</a> -->
+      <a class="nav-link" href="/admin/homepage">HOME</a>
+      <a class="nav-link" href="/admin/dues">DUES</a>
+      <a class="nav-link" href="/admin/notices">NOTICES</a>
+      <a class="nav-link" href="/admin/complaints">COMPLAINTS</a>
+      <a class="nav-link" href="/admin/permissions">PERMISSION</a>
+      <a class="nav-link" id="active" href="/admin/addUser">RESIDENTS</a>
+      <a class="nav-link" href="/admin/documents">DOCUMENTS</a>
+      <div class="dropdown">
+        <img src="/images/residents(admin)/baseline_person_white_24dp.png" height="30px" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      <!-- <a class="nav-link" href="#">
+              <img src="/images/residents(admin)/baseline_person_white_24dp.png" height="30px">
+            </a> -->
+
+    </div>
+  </nav>
+
+  <% if (success && success.length) {%>
+    <div class="alert alert-success alert-dismissible fade show alert-div" role="alert">
+      <p class="alert-p">
+        <%- success -%>
+      </p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% }%>
+      <% if (error && error.length) {%>
+        <div class="alert alert-danger alert-dismissible fade show alert-div" role="alert">
+          <p class="alert-p">
+            <%- error -%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% }%>
+
+
+          <div class="container-form">
+            <h2>ADD NEW USER</h2>
+            <div class="form-align">
+              <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Contact Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+                <div class="mb-3">
+                  <label for="type" class="form-label">Type</label>
+                  <select class="form-select" name="type">
+                    <option value="admin">Admin</option>
+                    <option value="resident-owner" selected>Resident-Owner</option>
+                    <option value="resident-rental">Resident-Rental</option>
+                    <option value="security">Security</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="Wing" class="form-label">Wing</label>
+                  <input type="text" class="form-control" id="Wing" name="flat[wing]">
+                </div>
+                <div class="mb-3">
+                  <label for="Flat" class="form-label">Flat Number</label>
+                  <input type="text" class="form-control" id="Flat" name="flat[roomNumber]">
+                </div>
+                <div class="mb-3">
+                  <label for="Fo" class="form-label">Photo(.png file)</label>
+                  <input type="file" class="form-control" id="Photo" name="image">
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="filter">
+            <h3>RESIDENT INFORMATION</h3>
+            <form action="/admin/specificUser" method="POST">
+              <label for="Wing">Select Wing:</label>
+              <select required name="wing" class="filter-select">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="all">All</option>
+              </select>
+              <label for="Flat">Select Flat no.:</label>
+              <input required type="text" name="roomNumber" id="Flat" min="101" class="filter-select">
+              <button class="filter-select">Submit</button>
+            </form>
+          </div>
+
+
+
+          <div class="profile-area">
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-5 g-5">
+                <% for (const user of users) { %>
+                  <div class="col card-div">
+                    <div class="card text-center h-100">
+                      <% if (user.image.url && user.image.url.length) {%>
+                        <img src=<%- user.image.url %> class="card-img-top" alt="...">
+                        <% } else {%>
+                          <% %>
+                            <img src="/images/residents(admin)/nm.jpg" class="card-img-top" alt="...">
+                            <% }%>
+
+                              <div class="card-body">
+                                <h5 class="card-title">
+                                  <%- user.name %>
+                                </h5>
+                                <p class="card-text">
+                                  <%- `${user.flat.wing}/${user.flat.roomNumber}` %>
+                                </p>
+                                <p class="card-text">
+                                  <%- `${user.phone}` %>
+                                </p>
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  More Details
+                </button> -->
+                              </div>
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Resident Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p> Add Details here from the database</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back-button">
+            <div class="col-md-12 text-center">
+              <button type="button" class="btn">BACK</button>
+            </div>
+          </div>
+
+          <footer>
+            <div class="card" id="pagefooter">
+              <div class="card-body" id="footerbody">
+                <h1 class="card-title" id="footertitle">Get In Touch</h1>
+                <p class="card-text" id="footertext">To learn more and for further enquiries</p>
+                <h4><a href="#">Click Here</a></h4>
+                <div class="footerimg">
+                  <img src="/images/residents(admin)/Up arrow.png" alt="arrow" height="40px">
+                </div>
+              </div>
+              <div class="card-footer" id="footerend">
+                <h5>Contact: +917303209630 </h5>
+                <div class="footerimageslogo">
+                  <a href="#"><img src="/images/residents(admin)/youtube-logo-.png" height="35px"></a>
+                  <a href="#"><img src="/images/residents(admin)/logo-instagram-.png" height="35px"></a>
+                  <a href="#"><img src="/images/residents(admin)/logo-twitter-.png" height="35px"></a>
+                  <a href="#"><img src="/images/residents(admin)/facebook logo.png" height="35px"></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
