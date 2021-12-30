@@ -3,12 +3,6 @@
 *Basic Requirement:*
 _Install Node js_ <br/>
 
-Install create-react-app
-Install <br/>
-run <br/>`npm install -g create-react-app` globally. <br/>
-This will help to easily run the project and also build the source files easily. <br/> <br/>
-Use the following command to install create-react-app<br/>
-
 Cloning and Running the Application in local<br/>
 Clone the project in localhost<br/>
 
