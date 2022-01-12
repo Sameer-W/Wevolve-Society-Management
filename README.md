@@ -55,6 +55,10 @@ The app looks like this on running!
 ![WhatsApp Image 2021-12-30 at 3 44 40 PM](https://user-images.githubusercontent.com/66380988/147742759-3bdc895a-9d7a-4a4c-85b2-15b64bdc6636.jpeg)
 ![WhatsApp Image 2021-12-30 at 3 45 14 PM](https://user-images.githubusercontent.com/66380988/147742792-99d5dba1-bbcf-45db-96ae-59ce3e859aa0.jpeg)
 ![WhatsApp Image 2021-12-30 at 3 45 48 PM](https://user-images.githubusercontent.com/66380988/147742816-49cff4e1-da45-4fba-9f06-03588e65f064.jpeg)
+![image](https://user-images.githubusercontent.com/60566843/149079952-43ba752b-674a-497e-870c-475e98fe6aaa.png)
+![image](https://user-images.githubusercontent.com/60566843/149079973-258f2fb2-e0fe-48a6-979b-806d0ac5f773.png)
+![image](https://user-images.githubusercontent.com/60566843/149080053-52f07ee4-600d-4975-b0f0-efd90db431ae.png)
+
 
 
 
